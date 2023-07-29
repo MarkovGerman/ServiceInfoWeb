@@ -1,0 +1,93 @@
+@page
+@using ServiceInfoWebServer.Enums
+@model ServiceInfoWebServer.Pages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ServiceInfo</h4>
+<hr/>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ServiceInfo.Name" class="control-label"></label>
+                <input asp-for="ServiceInfo.Name" class="form-control"/>
+                <span asp-validation-for="ServiceInfo.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceInfo.Description" class="control-label"></label>
+                <input asp-for="ServiceInfo.Description" class="form-control"/>
+                <span asp-validation-for="ServiceInfo.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceInfo.Host" class="control-label"></label>
+                <input asp-for="ServiceInfo.Host" class="form-control"/>
+                <span asp-validation-for="ServiceInfo.Host" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceInfo.StackName" class="control-label"></label>
+                <input asp-for="ServiceInfo.StackName" class="form-control"/>
+                <span asp-validation-for="ServiceInfo.StackName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceInfo.LocalDns" class="control-label"></label>
+                <input asp-for="ServiceInfo.LocalDns" class="form-control"/>
+                <span asp-validation-for="ServiceInfo.LocalDns" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceInfo.LocalPort" class="control-label"></label>
+                <input asp-for="ServiceInfo.LocalPort" class="form-control"/>
+                <span asp-validation-for="ServiceInfo.LocalPort" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceInfo.LocalSecondPort" class="control-label"></label>
+                <input asp-for="ServiceInfo.LocalSecondPort" class="form-control"/>
+                <span asp-validation-for="ServiceInfo.LocalSecondPort" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceInfo.PublicDns" class="control-label"></label>
+                <input asp-for="ServiceInfo.PublicDns" class="form-control"/>
+                <span asp-validation-for="ServiceInfo.PublicDns" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceInfo.PublicPort" class="control-label"></label>
+                <input asp-for="ServiceInfo.PublicPort" class="form-control"/>
+                <span asp-validation-for="ServiceInfo.PublicPort" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceInfo.PublicUrl" class="control-label"></label>
+                <input asp-for="ServiceInfo.PublicUrl" class="form-control"/>
+                <span asp-validation-for="ServiceInfo.PublicUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceInfo.ServiceEnvironment" class="control-label"></label>
+                <select asp-for="ServiceInfo.ServiceEnvironment" class="form-control"
+                        asp-items="@Html.GetEnumSelectList<ServiceEnvironment>()"></select>
+                <span asp-validation-for="ServiceInfo.ServiceEnvironment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceInfo.ServiceType" class="control-label"></label>
+                <select asp-for="ServiceInfo.ServiceType" class="form-control"
+                        asp-items="@Html.GetEnumSelectList<ServiceType>()"></select>
+                <span asp-validation-for="ServiceInfo.ServiceType" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ServiceInfo.IsActive"/> @Html.DisplayNameFor(model => model.ServiceInfo.IsActive)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>

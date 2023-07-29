@@ -1,0 +1,97 @@
+@page
+@model ServiceInfoWebServer.Pages.DeleteModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ServiceInfo</h4>
+    <hr/>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServiceInfo.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServiceInfo.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServiceInfo.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServiceInfo.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServiceInfo.Host)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServiceInfo.Host)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServiceInfo.StackName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServiceInfo.StackName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServiceInfo.LocalDns)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServiceInfo.LocalDns)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServiceInfo.LocalPort)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServiceInfo.LocalPort)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServiceInfo.LocalSecondPort)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServiceInfo.LocalSecondPort)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServiceInfo.PublicDns)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServiceInfo.PublicDns)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServiceInfo.PublicPort)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServiceInfo.PublicPort)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServiceInfo.PublicUrl)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServiceInfo.PublicUrl)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServiceInfo.ServiceEnvironment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServiceInfo.ServiceEnvironment)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServiceInfo.ServiceType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServiceInfo.ServiceType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServiceInfo.IsActive)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServiceInfo.IsActive)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ServiceInfo?.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

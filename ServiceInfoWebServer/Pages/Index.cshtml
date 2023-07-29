@@ -1,0 +1,119 @@
+@page
+@using ServiceInfoWebServer.Enums
+@model ServiceInfoWebServer.Pages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Index</h1>
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<table id="table"
+       data-toggle="table"
+       data-filter-control="true"
+       data-filter-control-container="#service-environment"
+       data-click-to-select="true"
+       data-toolbar="#toolbar"
+       class="table table-striped table-responsive">
+    <thead>
+    <tr>
+        <th class="column-sm-2" data-field="name" data-filter-control="input" data-sortable="true">
+            Name
+        </th>
+        <th class="column-sm-2" data-field="description" data-filter-control="input" data-sortable="true">
+            Description
+        </th>
+        <th class="column-sm-2" data-field="host" data-filter-control="select" data-sortable="true">
+            Host
+        </th>
+        <th class="column-sm-2" data-field="stack-name" data-filter-control="select" data-sortable="true">
+            Stack<br>Name
+        </th>
+        <th class="column-sm-2" data-field="local-dns" data-filter-control="select" data-sortable="true">
+            Local<br>DNS
+        </th>
+        <th class="column-sm-1" data-field="local-port" data-filter-control="select" data-sortable="true">
+            Local<br>Port
+        </th>
+        <th class="column-sm-1" data-field="local-second-port" data-filter-control="select" data-sortable="true">
+            Local<br>Second<br>Port
+        </th>
+        <th class="column-sm-2" data-field="public-dns" data-filter-control="select" data-sortable="true">
+            Public<br>DNS
+        </th>
+        <th class="column-sm-1" data-field="public-port" data-filter-control="select" data-sortable="true">
+            Public<br>Port
+        </th>
+        <th class="column-sm-2" data-field="public-url" data-formatter="linkFormatter" data-filter-control="select" data-sortable="true">
+            Public<br>Url
+        </th>
+        <th class="column-sm-2" data-field="service-environment" data-filter-control="select" data-filter-data="var:environmentDefaults" data-sortable="true">
+            Service<br>Environment
+        </th>
+        <th class="column-sm-2" data-field="service-type" data-filter-control="select" data-sortable="true">
+            Service<br>Type
+        </th>
+        <th class="column-sm-1" data-field="bool" data-formatter="boolFormatter" data-filter-data="var:activeDefaults" data-filter-control="select" data-sortable="true">
+            Is<br>Active
+        </th>
+        <th class="column-sm-2" data-field="local-url" data-formatter="linkFormatter" data-filter-control="select" data-sortable="true">
+            Local<br>Url
+        </th>
+        <th class="column-sm-2" data-formatter="editFormatter">Edit<br>or<br>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.ServiceInfo)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Host)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StackName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocalDns)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocalPort)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocalSecondPort)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublicDns)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublicPort)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublicUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceEnvironment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocalUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
